@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AskPuzzzik</title>
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../templates/index.html">AskPuzzzik</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <form class="d-flex" id="form-search" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+            <a
+              type="button"
+              class="btn btn-success"
+              href="../templates/ask.html"
+            >
+              Ask!
+            </a>
+            <div class="user-block">
+              <div class="row">
+                <div class="col-4">
+                  <div class="user-block-avatar">
+                    <img src="../static/img/3.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="user-block-information">
+                    User name
+                    <div class="user-block-actions">
+                      <a href="#">log out</a>
+                      <a href="../templates/settings.html">settings</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h1>Registration</h1>
+            <div class="signup">
+              <div class="mb-3">
+                <label for="login_input" class="form-label">Login</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="login_input"
+                  placeholder="Enter you login here"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email_input" class="form-label">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email_input"
+                  placeholder="Enter you email here"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="nickname_input" class="form-label">NickName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nickname_input"
+                  placeholder="Enter you nickname here"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password_input" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password_input"
+                  placeholder="password"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password_repeat_input" class="form-label"
+                  >Repeat password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password_repeat_input"
+                  placeholder="password"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="upload_avatar" class="form-label"
+                  >Upload avatar</label
+                >
+                <input class="form-control" type="file" id="upload_avatar" />
+              </div>
+              <button type="button" class="btn btn-outline-dark">
+                Register!
+              </button>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="sidebar">
+              <h2 class="sidebar-tags">Popular Tags</h2>
+              <div class="tags">
+                <span class="tag">perl</span>
+                <span class="tag">python</span>
+                <span class="tag">Technopark</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">django</span>
+                <span class="tag">Mail.ru</span>
+                <span class="tag">Voloshin</span>
+                <span class="tag">Firefox</span>
+              </div>
+              <h2 class="sidebar-members">Best Members</h2>
+              <div class="member">
+                <a href="#">Mr. Freeman</a>
+              </div>
+              <div class="member">
+                <a href="#">Dr. House</a>
+              </div>
+              <div class="member">
+                <a href="#">Bender</a>
+              </div>
+              <div class="member">
+                <a href="#">Queen Victoria</a>
+              </div>
+              <div class="member">
+                <a href="#">V. Pupkin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

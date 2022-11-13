@@ -139,3 +139,7 @@ h1 {
 .form-check {
     margin-top: 20px;
 }
+
+.form-error {
+    color: red;
+}

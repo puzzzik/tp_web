@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AskPuzzzik</title>
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../templates/index.html">AskPuzzzik</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <form class="d-flex" id="form-search" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+            <a
+              type="button"
+              class="btn btn-success"
+              href="../templates/ask.html"
+            >
+              Ask!
+            </a>
+            <div class="user-block">
+              <div class="row">
+                <div class="col-4">
+                  <div class="user-block-avatar">
+                    <img src="../static/img/3.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="user-block-information">
+                    User name
+                    <div class="user-block-actions">
+                      <a href="#">log out</a>
+                      <a href="../templates/settings.html">settings</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <main></main>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a
+          class="text-reset fw-bold"
+          href="https://github.com/puzzzik/tp_web.git"
+          >GitHub link</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

@@ -36,6 +36,14 @@ def hot(request):
 def ask(request) -> HttpResponse:
     return render(request, 'ask.html')
 
+def questions_with_tag(request, id):
+    questions = Question.manager.get_question_with_tag(tag_id=id)
+    paged_obj = paginate(objects_list=questions, request=request)
+
+    context = {'questions': paged_obj,
+               'paged_obj': paged_obj}
+
+    return render(request, 'index.html', context=context)
 
 def question(request, id) -> HttpResponse:
     question = Question.objects.get(pk=id)

@@ -35,7 +35,7 @@
                   <div class="question-footer">
                     <span class="question-tags">Tags: 
                       {% for tag in question.tags.all%}
-                        <a href="#">{{tag.text}}</a> 
+                        <a href= "{% url 'questions_tag' tag.pk %}" >{{tag.text}}</a>
                       {%endfor%}
                     </span>
                   </div>

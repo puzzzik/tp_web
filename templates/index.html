@@ -42,7 +42,7 @@
             <span class="answer"><a href="#">answer {{ question.answers.count }}</a></span>
             <span class="question-tags">Tags: 
               {% for tag in question.tags.all%}
-                <a href="#">{{tag.text}}</a> 
+                <a href= "{% url 'questions_tag' tag.pk %}" >{{tag.text}}</a>
               {%endfor%}
             </span>
           </div>

@@ -72,7 +72,9 @@
             <h2 class="sidebar-tags">Popular Tags</h2>
             <div class="tags">
               {% for tag in hot_tags %}
-                <span class="tag">{{tag.text}}</span>
+                <span class="tag">
+                  <a href= "{% url 'questions_tag' tag.pk %}" >{{tag.text}}</a>
+                </span>
               {% endfor%}
             </div>
             <h2 class="sidebar-members">Best Members</h2>

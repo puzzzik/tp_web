@@ -14,6 +14,7 @@ urlpatterns = [
     path('settings/', view=views.settings, name='settings'),
     path('login/', view=views.login, name='login'),
     path('registration/', view=views.signup, name='signup'),
+    path('tag/<int:id>/', view=views.questions_with_tag, name='questions_tag')
 ]
 
 if settings.DEBUG:

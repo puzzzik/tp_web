@@ -65,6 +65,9 @@ class QuestionManager(models.Manager):
     def get_some_questions(self, count=40):
         return self.order_by('-date')[:count]
 
+    def get_question_with_tag(self, tag_id):
+        return self.filter(tags__pk=tag_id)
+
 
 class Question(models.Model):
     title = models.CharField(max_length=100, default="")

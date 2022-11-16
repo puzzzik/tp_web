@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from askme.models import *
@@ -36,7 +36,13 @@ def hot(request):
 def ask(request) -> HttpResponse:
     return render(request, 'ask.html')
 
+
 def questions_with_tag(request, id):
+    try:
+        Tag.objects.get(pk=id)
+        questions = Question.manager.get_question_with_tag(tag_id=id)
+    except Exception:
+        return HttpResponseNotFound("ERROR 404: NOT FOUND")
     questions = Question.manager.get_question_with_tag(tag_id=id)
     paged_obj = paginate(objects_list=questions, request=request)
 
@@ -45,7 +51,13 @@ def questions_with_tag(request, id):
 
     return render(request, 'index.html', context=context)
 
-def question(request, id) -> HttpResponse:
+
+def question(request, id):
+    try:
+        question = Question.objects.get(pk=id)
+    except Exception:
+        return HttpResponseNotFound("ERROR 404: NOT FOUND")
+
     question = Question.objects.get(pk=id)
     answers = question.answers.all()
     paged_obj = paginate(objects_list=answers, request=request)

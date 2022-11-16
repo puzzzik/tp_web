@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}{% endblock %}</title>
+
+  <link href={% static "css/bootstrap.css" %} rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href={% static "css/style.css" %} rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh">
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href={% url 'index' %}>AskPuzzzik</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="d-flex" id="form-search" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <a type="button" class="btn btn-success" href={% url "ask" %}>
+            Ask!
+          </a>
+          <div class="user-block">
+            <div class="row">
+              <div class="col-4">
+                <div class="user-block-avatar">
+                  <img src={% static 'img/3.jpg'%} alt="" />
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="user-block-information">
+                  User name
+                  <div class="user-block-actions">
+                    <a href={% url 'login' %} >Login</a>
+                    <a href={% url "settings" %}>Settings</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-fill">
+    <div class="container">
+      <div class="row">
+        
+        {% block content %}
+          {% block pagination %}
+          {% endblock %}
+        {% endblock %}
+        
+        <div class="col-4">
+          <div class="sidebar">
+            <h2 class="sidebar-tags">Popular Tags</h2>
+            <div class="tags">
+              {% for tag in hot_tags %}
+                <span class="tag">{{tag.text}}</span>
+              {% endfor%}
+            </div>
+            <h2 class="sidebar-members">Best Members</h2>
+            {% for member in hot_users %}
+              <div class="member">
+                <p>{{ member.user.username }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://github.com/puzzzik/tp_web.git">GitHub link</a>
+    </div>
+  </footer>
+</body>
+
+</html>

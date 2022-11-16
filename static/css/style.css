@@ -143,3 +143,10 @@ h1 {
 .form-error {
     color: red;
 }
+.footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 114px;
+}
